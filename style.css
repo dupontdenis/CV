@@ -1,0 +1,102 @@
+body {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  margin: 2em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h1 {
+  font-size: 3em;
+  letter-spacing: .6em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}
+
+main {
+  display: block;
+  margin-top: 3em;
+}
+
+@media (min-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+
+  header {
+    text-align: center;
+    margin: auto 2em;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+
+  section {
+    margin: auto 1em 4em 2em;
+  }
+
+  i {
+    margin-right: .5em;
+  }
+
+  p {
+    margin: .2em auto
+  }
+
+  hr {
+    border: none;
+    background-color: lightgray;
+    height: 1px;
+  }
+
+  h1,
+  h2 {
+    font-weight: 100;
+    margin-bottom: 0;
+  }
+
+  #mainLeft {
+    border-right: 1px solid lightgray;
+  }
+}
+
+/* Profile photo styles */
+.resume-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: none;
+  border: 2px solid #e6e6e6;
+}
+
+@media (min-width: 600px) {
+  h1:hover+#photo-container .resume-photo {
+    display: block;
+  }
+
+  /* position the photo absolutely to the right of the header */
+  #photo-container {
+    position: absolute;
+    right: 0px;
+    transform: translateY(100%);
+  }
+
+
+}
+
+/* Hide the photo on small screens (under 600px) */
+@media (max-width: 599px) {
+  .resume-photo {
+    display: none;
+  }
+}
